@@ -251,8 +251,6 @@ function get20s(artists){
   return(twentieth);
 }
 
-
-
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -288,7 +286,7 @@ At the end, this function should return the new array with information added"*/
 function addArtist(array, id, name, years, genre, nationality, bio){
     array.push(id, name, years, genre, nationality, bio);
     return array
-  }
+}
 
   console.log(addArtist(artists, 20, "Jeremiah Candelaria", "1984-2020", "Web Design", "American", "Do the right thing here. String this blind girl along so that dad doesn't have to pay his debt to society. That's how Tony Wonder lost a nut. Yeah, that's a cultural problem is what it is."));
 
@@ -336,21 +334,31 @@ The function should console.log 50 chunks of HTML code that match the structure 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
 
-function getHTML(/* Code here */){
+//  Yikes. I have no idea...
 
-    /* Code here */
-
+function getHTML(data){
+  for(let i in data){
+    if(data.includes("artist")){
+      return `<div id="artist">${artists[i].id}</div>`;
+    }else if(data.includes("image")){
+      return `<div class="image">${artists[i].image}</div>`;
+    }else if(data.includes("name")){
+      return `<div class="name">${artists[i].name}</div>`;
+    }else if(data.includes("bio")){
+      return `<div class="bio">${artists[i].bio}</div>`;
+    }
   }
-
+}
 
 /* 💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪
 Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
-function randomize(/* Code here */){
+// I knew I wanted to use the `.random()` method, but wasn't sure how. I researched and found an example using and arrow function and the `.sort()` method.
 
-    /* Code here */
+function randomize(array){
+  return array.sort(() => Math.random() - 0.5);
+}
 
-  }
 
 
  /* 💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪
